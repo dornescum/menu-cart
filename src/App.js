@@ -5,12 +5,12 @@ import Header from "./components/UI/Header";
 
 
 function App() {
-    const {products, onAdd, onRemove, cartItems, isLoading} =useResultContext();
+    const {products, onAdd, onRemove, cartItems, isLoading, showCart, setShowCart} =useResultContext();
     // console.log(products);
   return (
     <div className="relative  mx-2 font-dosis">
 
-		<Header countCartItems={cartItems.length}/>
+		<Header countCartItems={cartItems.length} showCart={showCart}/>
         <div className='flex flex-col md:flex-row justify-between'>
             <Main  products={products} onAdd={onAdd}/>
             <Basket  cartItems={cartItems}

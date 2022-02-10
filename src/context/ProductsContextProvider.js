@@ -6,6 +6,8 @@ export const ProductContextProvider =({children})=>{
 	const [products, setProducts] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 	const [cartItems, setCartItems] = useState([]);
+	// const [showCart, setShowCart]=useState(false)
+
 
 	// console.log(products);
 

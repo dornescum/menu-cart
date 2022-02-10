@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const Basket = (props) => {
+	const [showCart, setShowCart]=useState(false)
 	const { cartItems, onAdd, onRemove } = props;
 	const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
 	console.log(typeof itemsPrice);
@@ -9,10 +10,14 @@ const Basket = (props) => {
 	const totalPrice = itemsPrice + taxPrice + shippingPrice;
 	// lg:w-48 absolute top-10 right-10
 	return (
-		<aside className="basis-1 md:basis-1/4 px-4 w-80 md:w-80 lg:96 bottom-0  md:top-8 md:right-8 fixed">
-			<div className='mt-20 rounded-md bg-stone-100 py-4 px-2'>
+		<aside className="basis-1 md:basis-1/4 px-0 pr-4 md:px-4 w-full md:w-80 lg:96
+		bottom-0  md:top-8 md:right-8 fixed" id='basket'>
+			{/**/}
+			{/*<div className={`${showCart ? 'block': 'hidden'} mt-20 rounded-md bg-stone-100 py-4 px-2`}>*/}
+			<div className='mt-20 rounded-md bg-stone-100 py-4 px-2 hidden md:block'>
+
 				<h2 className='mt-4 mb-10 text-2xl font-bold'>Cart Items</h2>
-				<div>
+				<div className=''>
 					{cartItems.length === 0 && <div>Cart is empty</div>}
 					{cartItems.map((item) => (
 						<div key={item.id} className="row">
@@ -41,7 +46,7 @@ const Basket = (props) => {
 					))}
 
 					{cartItems.length !== 0 && (
-						<>
+						<div className=''>
 							<hr></hr>
 							<div className="flex justify-between my-4">
 								<div className="text-2xl">Items Price</div>
@@ -72,11 +77,13 @@ const Basket = (props) => {
 									Checkout
 								</button>
 							</div>
-						</>
+						</div>
 					)}
 				</div>
 			</div>
-
+				<div className='bg-stone-200 md:hidden flex justify-center items-center py-4'>
+					<button onClick={()=>{setShowCart(!showCart)}} className='font-bold rounded-sm'>Show cart</button>
+				</div>
 		</aside>
 	);
 };
