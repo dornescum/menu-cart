@@ -13,12 +13,10 @@ const Basket = (props) => {
 	// lg:w-48 absolute top-10 right-10
 	return (
 		<aside className="basis-1 lg:basis-1/4 px-0 pr-4 md:px-4 w-full md:w-80 lg:96
-		bottom-0  md:top-8 md:right-8 fixed" id='basket'>
-			{/**/}
-			{/*<div className={`${showCart ? 'block': 'hidden'} mt-20 rounded-md bg-stone-100 py-4 px-2`}>*/}
+		bottom-0  md:top-8 md:right-8 fixed overflow-scroll " id='basket'>
+
 
 			<div className='mt-20 rounded-md bg-stone-100 py-4 px-2 hidden md:block'>
-
 				<h2 className='mt-4 mb-10 text-2xl font-bold'>Cart Items</h2>
 				<div className=''>
 					{cartItems.length === 0 && <div>Cart is empty</div>}
@@ -38,13 +36,10 @@ const Basket = (props) => {
 										+
 									</button>
 								</div>
-
 								<div className="flex justify-center items-center mx-2 text-2xl">
 									{item.qty} x {item.price} &euro;
 								</div>
 							</div>
-
-
 						</div>
 					))}
 
@@ -74,22 +69,16 @@ const Basket = (props) => {
 									<strong> {totalPrice.toFixed(2)} &euro;</strong>
 								</div>
 							</div>
-							<hr />
 							<div className="row">
-								<button onClick={() => alert('Implement Checkout!')}>
-									Checkout
-								</button>
+								<NavLink to='/CartDetails' className='bg-stone-200 flex justify-center items-center
+								py-4 rounded-md'>
+									<button className='font-bold rounded-sm'>Checkout</button>
+								</NavLink>
 							</div>
 						</div>
 					)}
 				</div>
 			</div>
-
-			{/*</div>*/}
-			{/**/}
-			{/*	<div className='bg-stone-200 md:hidden flex justify-center items-center py-4'>*/}
-			{/*		<button onClick={()=>{setShowCart(!showCart)}} className='font-bold rounded-sm'>Show cart</button>*/}
-			{/*	</div>*/}
 			<NavLink to='/CartDetails' className='bg-stone-200 md:hidden flex justify-center items-center py-4'>
 				<button className='font-bold rounded-sm'>Show Cart</button>
 			</NavLink>

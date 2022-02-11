@@ -5,22 +5,15 @@ import Header from "./components/UI/Header";
 import {BrowserRouter, Switch, Route, Router} from "react-router-dom";
 import CartDetails from "./components/CartDetails/CartDetails";
 import SignIn from "./components/SignIn";
+import Footer from "./components/UI/Footer";
 
 
 function App() {
-	const {products, onAdd, onRemove, cartItems, isLoading, showCart, setShowCart} = useResultContext();
+	const {products, onAdd, onRemove, cartItems} = useResultContext();
 
 
 	return (
-		<div className="relative  mx-2 font-dosis">
-			{/*{showCart && <Header countCartItems={cartItems.length}/>}*/}
-			{/*<Header countCartItems={cartItems.length}/>*/}
-			{/*<nav>*/}
-			{/*    <ul>*/}
-			{/*        <li>Home</li>*/}
-			{/*        <li onClick={()=>setShowCart(!showCart)}>{cartItems.length}</li>*/}
-			{/*    </ul>*/}
-			{/*</nav>*/}
+		<div className="relative  mx-2 font-dosis min-h-screen">
 			<BrowserRouter>
 				<Header countCartItems={cartItems.length}/>
 				<Route path="/" exact>
@@ -35,18 +28,10 @@ function App() {
 					<CartDetails/>
 				</Route>
 				<Route path="/SignIn" exact>
-					<SignIn />
+					<SignIn/>
 				</Route>
-
+				<Footer/>
 			</BrowserRouter>
-			{/*<div className="flex flex-col md:flex-row justify-between">*/}
-			{/*	<Main products={products} onAdd={onAdd}/>*/}
-			{/*	<Basket cartItems={cartItems}*/}
-			{/*			onAdd={onAdd}*/}
-			{/*			onRemove={onRemove}/>*/}
-			{/*</div>*/}
-
-
 		</div>
 	);
 }

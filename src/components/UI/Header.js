@@ -5,7 +5,7 @@ export default function Header({countCartItems}) {
 
 
 	return (
-		<header className="block bg-stone-50 flex w-full fixed justify-between p-4">
+		<header className="block bg-stone-50 z-10 flex w-full fixed justify-between p-4">
 			<div>
 				<NavLink to="/">
 					<h1 className="text-2xl font-bold">Menu</h1>

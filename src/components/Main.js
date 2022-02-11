@@ -7,6 +7,7 @@ export default function Main(props) {
 		<main className="basis-1 lg:basis-3/4">
 			<h2>Products</h2>
 			<div className=" flex flex-wrap gap-2 mx-0 justify-center items-center mb-20">
+				{!products && <p>LOADING ...</p>}
 				{products.map((product) => (
 					<Product key={product.id} product={product} onAdd={onAdd}></Product>
 				))}
