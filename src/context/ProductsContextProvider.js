@@ -6,7 +6,7 @@ export const ProductContextProvider =({children})=>{
 	const [products, setProducts] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 	const [cartItems, setCartItems] = useState([]);
-	// const [showCart, setShowCart]=useState(false)
+	const [showCart, setShowCart]=useState(false)
 
 
 	// console.log(products);
@@ -15,7 +15,7 @@ export const ProductContextProvider =({children})=>{
 		const getData =async ()=>{
 			const res = await fetch('https://food-nodejs.herokuapp.com/api/food');
 			const data = await res.json();
-			console.log(data)
+			// console.log(data)
 			setProducts(data)
 		}
 		getData()
@@ -47,7 +47,7 @@ export const ProductContextProvider =({children})=>{
 	};
 
 
-	return <ProductContext.Provider value={{products,cartItems, onAdd, onRemove, isLoading}}>
+	return <ProductContext.Provider value={{products,cartItems, onAdd, onRemove, isLoading, showCart, setShowCart}}>
 		{children}
 	</ProductContext.Provider>
 }

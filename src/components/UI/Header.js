@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
 export default function Header({countCartItems}) {
 
@@ -6,12 +7,12 @@ export default function Header({countCartItems}) {
 	return (
 		<header className="block bg-stone-50 flex w-full fixed justify-between p-4">
 			<div>
-				<a href="/">
+				<NavLink to="/">
 					<h1 className="text-2xl font-bold">Menu</h1>
-				</a>
+				</NavLink>
 			</div>
 			<div>
-				<a href="#/cart" className="mx-4 cursor-pointer">
+				<NavLink to="/CartDetails" className="mx-4 cursor-pointer">
 					Cart{' '}
 					{countCartItems ? (
 						// "bg-red-300 px-2 rounded-full cursor-pointer"
@@ -21,8 +22,8 @@ export default function Header({countCartItems}) {
 					) : (
 						''
 					)}
-				</a>{' '}
-				<a href="#/signin" className="mx-4 cursor-pointer"> Sign In</a>
+				</NavLink>{' '}
+				<NavLink to="/SignIn" className="mx-4 cursor-pointer"> Sign In</NavLink>
 			</div>
 		</header>
 	);
