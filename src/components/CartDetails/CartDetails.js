@@ -1,5 +1,6 @@
 import React from 'react';
 import {useResultContext} from "../../context/ProductsContextProvider";
+import {NavLink} from "react-router-dom";
 
 const CartDetails = () => {
 
@@ -75,10 +76,8 @@ const CartDetails = () => {
 								</div>
 							</div>
 							<hr />
-							<div className="row">
-								<button onClick={() => alert('Implement Checkout!')}>
-									Checkout
-								</button>
+							<div className="row py-4">
+								<NavLink to="/SignIn" className="cursor-pointer"> Checkout</NavLink>
 							</div>
 						</div>
 					)}
