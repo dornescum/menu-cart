@@ -8,7 +8,8 @@ export default function Product(props) {
 		rounded-md shadow-md  mt-16 md:mt-20  h-96 md:h-80 lg:h-96'>
 			<img className="object-cover h-48 lg:h-36 w-full rounded-tl rounded-tr" src={product.img}
 				 loading='lazy'	 alt={product.name} />
-			<h3 className='px-1 py-4 md:py-1'>{product.title}</h3>
+			<h3 className={`px-1 py-4 md:py-1 ${product.favorite === true ? "text-2xl":""}`}>{product.title}
+				{product.favorite === true ? "\"\u2B50\"" : ""}</h3>
 			<div className=' px-4 md:mb-2'>
 				{/*<p>{product.title}</p>*/}
 				<ul className='flex  py-4 md:py-1'>

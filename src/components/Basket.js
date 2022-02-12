@@ -13,8 +13,8 @@ const Basket = (props) => {
 	// lg:w-48 absolute top-10 right-10
 	return (
 		<aside className="basis-1 lg:basis-1/4 px-0 pr-4 md:px-4 w-full md:w-80 lg:96
-		bottom-0  md:top-8 md:right-8 fixed overflow-scroll " id='basket'>
-
+		bottom-0  md:top-8 md:right-8 fixed " id='basket'>
+			{/*overflow-scroll*/}
 
 			<div className='mt-20 rounded-md bg-stone-100 py-4 px-2 hidden md:block'>
 				<h2 className='mt-4 mb-10 text-2xl font-bold'>Cart Items</h2>
