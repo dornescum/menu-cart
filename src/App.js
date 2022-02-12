@@ -2,7 +2,7 @@ import {useResultContext} from "./context/ProductsContextProvider";
 import Basket from "./components/Basket";
 import Main from "./components/Main";
 import Header from "./components/UI/Header";
-import {BrowserRouter, Switch, Route, Router} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import CartDetails from "./components/CartDetails/CartDetails";
 import SignIn from "./components/SignIn";
 import Footer from "./components/UI/Footer";
@@ -10,7 +10,6 @@ import Footer from "./components/UI/Footer";
 
 function App() {
 	const {products, onAdd, onRemove, cartItems} = useResultContext();
-
 
 	return (
 		<div className="relative  mx-2 font-dosis min-h-screen">

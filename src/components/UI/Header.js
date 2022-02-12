@@ -12,10 +12,10 @@ export default function Header({countCartItems}) {
 			</div>
 			<div>
 				<NavLink to="/CartDetails" className="mx-4 cursor-pointer">
-					Cart{' '}
+					Cart
 					{countCartItems ? (
 						<button
-							className="bg-red-300 px-2 rounded-full cursor-pointer">{countCartItems}</button>
+							className="bg-red-300 px-2 ml-2 rounded-full cursor-pointer">{countCartItems}</button>
 					) : (
 						''
 					)}

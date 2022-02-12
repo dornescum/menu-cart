@@ -17,7 +17,7 @@ const SignIn = () => {
 	return (
 		<div className="pt-20 flex justify-center items-center ">
 			<div className="flex justify-center items-center bg-stone-50 w-full md:w-3/5">
-				<form className="flex flex-col pb-20" onSubmit={handleForm}>
+				<form className="flex flex-col pb-20 w-full mx-4 md:mx-12 lg:mx-60" onSubmit={handleForm}>
 
 					<h4 className="font-bold my-4"> Register </h4>
 					<div className="flex flex-col py-4">

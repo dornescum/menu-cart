@@ -4,10 +4,8 @@ const ProductContext = createContext();
 
 export const ProductContextProvider =({children})=>{
 	const [products, setProducts] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
 	const [cartItems, setCartItems] = useState([]);
-	const [showCart, setShowCart]=useState(false)
-
+	// const [showCart, setShowCart]=useState(false)
 
 	// console.log(products);
 
@@ -46,8 +44,8 @@ export const ProductContextProvider =({children})=>{
 		}
 	};
 
-
-	return <ProductContext.Provider value={{products,cartItems, onAdd, onRemove, isLoading, showCart, setShowCart}}>
+	// showCart, setShowCart
+	return <ProductContext.Provider value={{products,cartItems, onAdd, onRemove }}>
 		{children}
 	</ProductContext.Provider>
 }

@@ -5,7 +5,6 @@ import {NavLink} from "react-router-dom";
 const CartDetails = () => {
 
 	const { onAdd, onRemove, cartItems} = useResultContext();
-
 	const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
 	const taxPrice = itemsPrice * 0.09;
 	const shippingPrice = itemsPrice > 100 ? 0 : 20;
@@ -13,10 +12,7 @@ const CartDetails = () => {
 
 	return (
 		<div className='pt-20 flex justify-center items-center'>
-
-
 			<div className='mt-12 mx-1 md:mx-12 rounded-md bg-stone-100 py-4 px-2 w-full md:w-3/5'>
-
 				<h2 className='my-4 text-2xl font-bold'>Cart Items</h2>
 				<div className='' id='cart'>
 					{cartItems.length === 0 && <div>Cart is empty</div>}
@@ -36,13 +32,10 @@ const CartDetails = () => {
 										+
 									</button>
 								</div>
-
 								<div className="flex justify-center items-center mx-2 text-2xl">
 									{item.qty} x {item.price} &euro;
 								</div>
 							</div>
-
-
 						</div>
 					))}
 
