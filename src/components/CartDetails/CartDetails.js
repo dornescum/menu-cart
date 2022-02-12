@@ -4,10 +4,7 @@ import {NavLink} from "react-router-dom";
 
 const CartDetails = () => {
 
-	const {products, onAdd, onRemove, cartItems, isLoading, showCart, setShowCart} = useResultContext();
-
-
-	console.log(cartItems);
+	const { onAdd, onRemove, cartItems} = useResultContext();
 
 	const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
 	const taxPrice = itemsPrice * 0.09;

@@ -1,14 +1,18 @@
-import React, {useRef} from 'react';
+import React, {useState} from 'react';
 import Button from "./UI/Button";
 
 const SignIn = () => {
-	const name =useRef('');
-	console.log(name.current);
+	const [enteredName, setEnteredName]=useState('');
+	console.log(enteredName);
+
+	const handleName =(e)=>{
+		setEnteredName(e.target.value)
+	}
 
 
 	const handleForm =(e)=>{
 		e.preventDefault();
-
+		setEnteredName('')
 	}
 	return (
 		<div className="pt-20 flex justify-center items-center ">
@@ -18,7 +22,9 @@ const SignIn = () => {
 					<h4 className="font-bold my-4"> Register </h4>
 					<div className="flex flex-col py-4">
 						<label htmlFor="name" className="py-2">Name</label>
-						<input type="text" id="name" placeholder=" Name" className="py-2" autoFocus required ref={name}/>
+						<input type="text" id="name" placeholder=" Name" className="py-2" autoFocus required value={enteredName}
+						onChange={handleName}
+						/>
 					</div>
 					<div className="flex flex-col py-4">
 						<label htmlFor="email" className="py-2">Email</label>

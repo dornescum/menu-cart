@@ -20,7 +20,6 @@ export default function Product(props) {
 			</ul>
 
 			<div className=' px-4 md:mb-2'>
-				{/*<p>{product.title}</p>*/}
 				<ul className='flex  py-4 md:py-1'>
 					<li className='mx-8'><a href="/">info</a></li>
 					<li className='mx-8'>{product.price} &euro;</li>
@@ -28,7 +27,6 @@ export default function Product(props) {
 
 			</div>
 			<div className='p-1  flex justify-center items-center'>
-				{/*<button onClick={() => onAdd(product)} className=''>Add To Cart</button>*/}
 				<Button onClick={() => onAdd(product)}>Add to cart</Button>
 			</div>
 		</div>

@@ -3,7 +3,6 @@ import {NavLink} from "react-router-dom";
 
 export default function Header({countCartItems}) {
 
-
 	return (
 		<header className="block bg-stone-50 z-10 flex w-full fixed justify-between p-4">
 			<div>
@@ -15,8 +14,6 @@ export default function Header({countCartItems}) {
 				<NavLink to="/CartDetails" className="mx-4 cursor-pointer">
 					Cart{' '}
 					{countCartItems ? (
-						// "bg-red-300 px-2 rounded-full cursor-pointer"
-						// {`${showCart ? 'md:block' : 'hidden'} bg-red-300 px-2 rounded-full cursor-pointer`}
 						<button
 							className="bg-red-300 px-2 rounded-full cursor-pointer">{countCartItems}</button>
 					) : (

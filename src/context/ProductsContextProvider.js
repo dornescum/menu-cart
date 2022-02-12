@@ -9,7 +9,7 @@ export const ProductContextProvider =({children})=>{
 	const [showCart, setShowCart]=useState(false)
 
 
-	console.log(products);
+	// console.log(products);
 
 	useEffect(()=>{
 		const getData =async ()=>{
